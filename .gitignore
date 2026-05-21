@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swp
+.DS_Store
+*.log
+*.tmp
+*.bak
+*.cache
+*.egg-info/
+dist/
+build/
+*.egg
+*.tar.gz
