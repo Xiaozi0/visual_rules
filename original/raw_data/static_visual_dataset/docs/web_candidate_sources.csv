@@ -1,0 +1,20 @@
+source_name,category,source_kind,rule_family,why_useful_for_generator,priority,collection_mode,license_risk,notes,link
+RAVEN,benchmark,paper+github,matrix_analogy,"基于图像语法生成，天然适合继续抽象规则并改写生成器",high,direct_download_or_reimplement,medium,"7种figural configurations，偏RPM/矩阵推理；比直接抓IQ题更安全",https://github.com/WellyZhang/RAVEN
+I-RAVEN,benchmark,paper+github,matrix_analogy,"已有可生成数据代码，适合直接复用或改写成你的rule-based family",high,direct_generate,low,"repo里可以直接生成样本；适合做更稳的规则拆解",https://github.com/cwhy/i-raven
+ARC-AGI-1,benchmark,official_github,grid_transformation,"每题都是小网格规则变换，非常适合抽象成DSL/程序生成器",high,direct_download,low,"不是传统图片题，但规则性极强，适合作为高价值补充",https://github.com/fchollet/ARC-AGI
+Bongard-LOGO,benchmark+generator,github,concept_classification,"正负样本式规则归纳，天然适合生成大规模变体",high,direct_download_or_generate,low,"12,000 synthetic problems，并提供synthesis library",https://github.com/NVlabs/Bongard-LOGO
+VisualSphinx-V1-Benchmark,benchmark,huggingface,pattern_completion,"视觉逻辑题，字段清晰，能补充你现有pattern-completion池",medium,direct_download,unknown,"更偏benchmark，不一定自带生成器，但很适合抽规则",https://huggingface.co/datasets/VisualSphinx/VisualSphinx-V1-Benchmark
+LogicVista,benchmark,paper+github,mixed_visual_logic,"448道多选视觉逻辑题，可做规则目录扩充",medium,direct_download_or_scrape_repo,unknown,"5 tasks, 9 capabilities；更适合作为题型索引，不一定所有题都适合程序化",https://github.com/Yijia-Xiao/LogicVista
+PuzzleWorld,benchmark,huggingface,open_ended_multimodal_puzzles,"适合发现新题型来源，尤其是puzzlehunt里的视觉/空间子类",medium,direct_download_and_filter,unknown,"667题，异质性高；更适合做题型发现，不适合整库直接程序化",https://huggingface.co/datasets/hzli1202/PuzzleWorld
+Erbsland Maze Generator,open_source_generator,website+github,maze_pathfinding,"直接就是生成器，可立即纳入你的rule-based pipeline",high,direct_generate,low,"矩形maze成熟稳定，能快速扩充路径类数据",https://erbsland.dev/projects/erbsland-maze/
+Nonogram-Maker,open_source_generator,github,nonogram_picross,"非ogram类规则明确、答案唯一、易控难度",high,direct_generate,low,"solvable nonogram generator，适合新增一整个家族",https://github.com/kniffen/Nonogram-Maker
+Sudoku.js,open_source_generator,github,sudoku_constraint,"经典约束满足题，生成器成熟，利于补充数值/逻辑类",medium,direct_generate,low,"如果你接受非纯视觉但可视化呈现的题，这个价值很高",https://github.com/robatron/sudoku.js/
+EmojiClu,open_source_generator,github,logic_grid_deduction,"图形化逻辑推理题，适合补你当前较少的逻辑约束类",high,direct_generate_or_reimplement,low,"有puzzle generator和难度控制思路，非常适合任务分配",https://github.com/timcharper/EmojiClu
+GridPonder,puzzle_platform,website,json_rule_games,"规则用JSON描述，适合作为低代码规则库灵感",medium,manual_curate,unknown,"更像规则游戏平台；适合挖可程序化的grid puzzle变体",https://www.gridponder.org/
+Tangram web implementation,open_source_game,github,tangram_spatial_composition,"适合补充拼装/覆盖/轮廓匹配类空间题",medium,reimplement_from_rules,low,"不是现成数据集，但规则明确，容易自己写生成器",https://github.com/twpride/tangram
+TangramPuzzle,benchmark,paper,tangram_spatial_reasoning,"可作为题型参考，帮助你定义更系统的tangram family",medium,read_paper_then_reimplement,unknown,"更适合作为规则设计参考，不一定直接抓数据",https://arxiv.org/abs/2601.16520
+Jigsaw puzzle frameworks,open_source_generator,github,jigsaw_reassembly,"可扩展成拼图重组/块匹配/边界匹配类任务",medium,direct_generate_or_reimplement,low,"更偏感知+搜索；要控制块形状和答案唯一性",https://github.com/flbulgarelli/headbreaker
+Jigsaw JS puzzle lib,open_source_generator,github,jigsaw_reassembly,"同上，可更快做网页化或批量切块生成",medium,direct_generate,low,"如果你想快速扩充拼图类，这是低成本入口",https://github.com/Nico-Src/jigsaw-js-puzzle-lib
+Spot-the-Difference style datasets,benchmark,paper+dataset,difference_detection,"可以衍生为局部差异定位/计数/描述类视觉规则题",low,direct_download_then_filter,medium,"更偏检测而非抽象规则；适合作为补充，不建议优先",https://github.com/amazon-science/spot-diff
+Procedurally Generated Matrices,benchmark,paper,matrix_analogy,"和RAVEN/IRAVEN同谱系，可继续搜代码或自行重构规则",medium,paper_guided_reimplementation,unknown,"适合补矩阵规则族的多样性",https://arxiv.org/abs/2003.11608
+Official IQ / RPM test booklets,non_recommended,copyrighted_material,matrix_analogy,"题型有价值，但直接采集法律和版权风险高",avoid,do_not_scrape,high,"建议只借鉴公开论文里的规则描述，不要抓原题",https://en.wikipedia.org/wiki/Raven%27s_Progressive_Matrices

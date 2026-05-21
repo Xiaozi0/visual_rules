@@ -1,0 +1,148 @@
+[
+  {
+    "id": "r_rolling_puzzle_easy-0-00000",
+    "media": [
+      "images/00000.png"
+    ],
+    "messages": [
+      {
+        "role": "user",
+        "question": "<image> Note the red and green coordinate arrows in the image. The cube is currently at (0,0). If it rolls sequentially 'Right', 'Up', and 'Right', what will its top face be? Return only the face name.",
+        "answer": "",
+        "options": {},
+        "choices": [],
+        "hint": ""
+      }
+    ],
+    "metadata": {
+      "dataset": {
+        "slug": "r_rolling_puzzle_easy",
+        "source_id": "99_r_rolling_puzzle",
+        "family": "r_rolling_puzzle",
+        "upstream_name": "easy",
+        "title": "Rule-Based Rolling Puzzle: Easy"
+      },
+      "gt": {
+        "answer": "SpongeBob Face",
+        "answer_type": "string",
+        "choices": [],
+        "validator": {
+          "kind": "exact_string",
+          "solution": "SpongeBob Face"
+        }
+      },
+      "provenance": {
+        "seed": 0,
+        "index": 0,
+        "generator": "rule_based_python",
+        "rule_source": "vendor/rule-based/rolling_puzzle/rules.md"
+      },
+      "instance": {
+        "initial_pos": [
+          0,
+          0
+        ],
+        "initial_orientation": {
+          "top": "Brown Pants",
+          "bottom": "White Shoes",
+          "front": "SpongeBob Face",
+          "back": "Back of Head",
+          "left": "Left Arm",
+          "right": "Right Arm"
+        },
+        "path": [
+          "Right",
+          "Up",
+          "Right"
+        ],
+        "difficulty": "easy",
+        "final_state_debug": {
+          "coordinate": [
+            2,
+            1
+          ],
+          "color": "White",
+          "orientation": {
+            "top": "White Shoes",
+            "bottom": "Brown Pants",
+            "front": "Right Arm",
+            "back": "Left Arm",
+            "left": "Back of Head",
+            "right": "SpongeBob Face"
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "r_rolling_puzzle_hard-0-00001",
+    "media": [
+      "images/00001.png"
+    ],
+    "messages": [
+      {
+        "role": "user",
+        "question": "<image> The image displays a spatial puzzle. Is it possible to perform a sequence of grid rolls to keep the cube on its current starting square, but have the 'SpongeBob Face' pointing upwards? Answer 'Yes' or 'No'.",
+        "answer": "",
+        "options": {},
+        "choices": [],
+        "hint": ""
+      }
+    ],
+    "metadata": {
+      "dataset": {
+        "slug": "r_rolling_puzzle_hard",
+        "source_id": "99_r_rolling_puzzle",
+        "family": "r_rolling_puzzle",
+        "upstream_name": "hard",
+        "title": "Rule-Based Rolling Puzzle: Hard"
+      },
+      "gt": {
+        "answer": "No",
+        "answer_type": "string",
+        "choices": [],
+        "validator": {
+          "kind": "exact_string",
+          "solution": "No"
+        }
+      },
+      "provenance": {
+        "seed": 0,
+        "index": 1,
+        "generator": "rule_based_python",
+        "rule_source": "vendor/rule-based/rolling_puzzle/rules.md"
+      },
+      "instance": {
+        "initial_pos": [
+          0,
+          0
+        ],
+        "initial_orientation": {
+          "top": "Brown Pants",
+          "bottom": "White Shoes",
+          "front": "SpongeBob Face",
+          "back": "Back of Head",
+          "left": "Left Arm",
+          "right": "Right Arm"
+        },
+        "path": [],
+        "difficulty": "hard",
+        "final_state_debug": {
+          "coordinate": [
+            0,
+            0
+          ],
+          "color": "Black",
+          "orientation": {
+            "top": "Brown Pants",
+            "bottom": "White Shoes",
+            "front": "SpongeBob Face",
+            "back": "Back of Head",
+            "left": "Left Arm",
+            "right": "Right Arm"
+          }
+        }
+      }
+    }
+  }
+]

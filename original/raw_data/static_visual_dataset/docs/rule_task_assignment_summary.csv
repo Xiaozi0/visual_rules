@@ -1,0 +1,6 @@
+work_package,sources,visulogic_count,visualpuzzles_count,smart101_count,example_dataset,example_id,example_image,example_question
+规律补全,VisuLogic-Train; VisualPuzzles; SMART101,2647,162,5,VisuLogic-Train,00000,datasets/VisuLogic-Train/images/00000.png,Choose the most appropriate option from the four given to fill in the question mark so that it presents a certain regularity.
+六图分类,VisuLogic-Train; VisualPuzzles,752,47,0,VisuLogic-Train,00005,datasets/VisuLogic-Train/images/00005.png,"Divide the following six figures into two categories, so that each category has its own common characteristics or patterns."
+三维空间,VisuLogic-Train; VisualPuzzles; SMART101,806,226,9,VisuLogic-Train,00009,datasets/VisuLogic-Train/images/00009.png,The three-dimensional shape formed by folding the given planar diagram on the left is:
+路径与计量,VisualPuzzles; SMART101,0,358,60,VisualPuzzles,3,datasets/VisualPuzzles/images/image_00002.png,In each square of the maze there is a piece of cheese. Ronnie the mouse wants to enter and leave the maze as shown in the picture.
+类比与逻辑映射,VisualPuzzles; SMART101,0,375,27,VisualPuzzles,6,datasets/VisualPuzzles/images/image_00005.png,"Based on the relationship between Origin and Analogy, select the option from the candidates that best completes this analogy."

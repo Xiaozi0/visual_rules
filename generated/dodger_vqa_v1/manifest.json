@@ -1,0 +1,16 @@
+{
+  "dataset": "dodger_vqa_v1",
+  "version": "dodger_vqa_v1.0.0",
+  "generator": "dodger_vqa_generator.py",
+  "count": 2,
+  "seed": 20260521,
+  "rule_source": "original/批次 5-0521.md:Dodger; vendor/dodger/dodger.py",
+  "format": "format_docs/VQA_DATA_FORMAT.md",
+  "classification": "format_docs/classification.md",
+  "outputs": {
+    "records": "vis_scaling_simple_mm.jsonl",
+    "rules": "rules.jsonl",
+    "quality_report": "quality_report.json",
+    "images": "images/"
+  }
+}
