@@ -1,0 +1,19 @@
+{
+  "dataset": "prisoner_fences_v1",
+  "version": "batch6_remaining_v1.0.0",
+  "generator": "batch6_remaining_vqa_generator.py",
+  "count": 2,
+  "seed": 20260527,
+  "build_complexity": "medium",
+  "reasoning_max": "high",
+  "rule_source": "original/批次6-0522.md",
+  "format": "format_docs/VQA_DATA_FORMAT.md",
+  "classification": "format_docs/classification.md",
+  "reproduce_command": "python3 generator/batch6_remaining_vqa_generator.py --only prisoner_fences_v1 --count 2 --seed 20260527",
+  "outputs": {
+    "records": "vis_scaling_simple_mm.jsonl",
+    "rules": "rules.jsonl",
+    "quality_report": "quality_report.json",
+    "images": "images/"
+  }
+}

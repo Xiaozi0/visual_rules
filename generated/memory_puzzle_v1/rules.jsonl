@@ -1,0 +1,3 @@
+{"id": "memory_puzzle_v1.board", "task": "memory_puzzle_pair_matching", "rule": "The board is a grid of cards; unrevealed cards hide their icons."}
+{"id": "memory_puzzle_v1.icons", "task": "memory_puzzle_pair_matching", "rule": "Each icon is defined by both a shape and a color."}
+{"id": "memory_puzzle_v1.match", "task": "memory_puzzle_pair_matching", "rule": "Two cards match only if both the shape and color are identical."}

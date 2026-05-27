@@ -1,0 +1,1 @@
+{"id": "nibbles_v1.rule", "rule": "The snake moves one grid cell forward; collision occurs at walls or occupied body cells."}

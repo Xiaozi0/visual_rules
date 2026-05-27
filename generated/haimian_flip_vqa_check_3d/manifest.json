@@ -1,0 +1,17 @@
+{
+  "dataset": "haimian_flip_vqa",
+  "version": "haimian_flip_vqa_v1.0.0",
+  "generator": "haimian_flip_vqa_generator.py@haimian_flip_vqa_v1.0.0(codex)",
+  "count": 2,
+  "seed": 20260524,
+  "rule_source": "original/批次04-0519.md:海绵宝宝-翻木块; original/haimian_gemini; vendor/haimian_flip/RULES.md",
+  "format": "format_docs/VQA_DATA_FORMAT.md",
+  "classification": "format_docs/classification.md",
+  "reproduce_command": "python3 generator/haimian_flip_vqa_generator.py --seed 20260524 --out-dir generated/haimian_flip_vqa_check_3d",
+  "outputs": {
+    "records": "vis_scaling_simple_mm.jsonl",
+    "rules": "rules.jsonl",
+    "quality_report": "quality_report.json",
+    "images": "images/"
+  }
+}

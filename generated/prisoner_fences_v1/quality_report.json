@@ -1,0 +1,14 @@
+[
+  {
+    "id": "r_prisoner_fences_v1-41853132-00000",
+    "keep": true,
+    "reason": "rule verifier recomputation",
+    "answer": "yes"
+  },
+  {
+    "id": "r_prisoner_fences_v1-901905562-00001",
+    "keep": true,
+    "reason": "rule verifier recomputation",
+    "answer": "no"
+  }
+]

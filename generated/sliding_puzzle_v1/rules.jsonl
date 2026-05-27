@@ -1,0 +1,1 @@
+{"id": "sliding_puzzle_v1.rule", "rule": "Only tiles orthogonally adjacent to the blank can slide into it."}

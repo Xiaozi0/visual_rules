@@ -1,0 +1,4 @@
+{"id": "password_lock_v1.code", "task": "password_lock", "rule": "The hidden code has three distinct digits."}
+{"id": "password_lock_v1.in_place", "task": "password_lock", "rule": "Blue filled dots count digits that are correct and in the same position."}
+{"id": "password_lock_v1.misplaced", "task": "password_lock", "rule": "Gray outlined dots count digits that are in the code but in different positions."}
+{"id": "password_lock_v1.unique", "task": "password_lock", "rule": "The puzzle must have exactly one code satisfying all clues."}

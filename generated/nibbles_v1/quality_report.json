@@ -1,0 +1,14 @@
+[
+  {
+    "id": "r_nibbles_v1-78749814-00000",
+    "keep": true,
+    "reason": "snake-state verifier",
+    "answer": "yes"
+  },
+  {
+    "id": "r_nibbles_v1-445893207-00001",
+    "keep": true,
+    "reason": "snake-state verifier",
+    "answer": "south-east"
+  }
+]

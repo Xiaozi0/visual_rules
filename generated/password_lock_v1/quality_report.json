@@ -1,0 +1,14 @@
+[
+  {
+    "id": "r_password_lock_v1-219270505-00000",
+    "keep": true,
+    "reason": "constraint solver exact-match recomputation",
+    "answer": "042"
+  },
+  {
+    "id": "r_password_lock_v1-152985983-00001",
+    "keep": true,
+    "reason": "constraint solver exact-match recomputation",
+    "answer": "082"
+  }
+]

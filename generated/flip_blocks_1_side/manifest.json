@@ -1,0 +1,17 @@
+{
+  "dataset": "flip_blocks_1",
+  "version": "flip_blocks_1_v1.0.0",
+  "generator": "flip_blocks_1_pipeline.py@flip_blocks_1_v1.0.0(codex)",
+  "count": 2,
+  "seed": 20260524,
+  "rule_source": "original/批次04-0519.md:海绵宝宝-翻木块; original/批次05-0521.md:Bloxorz; source_data/original/assets/flip_blocks_ref_01.png; source_data/original/assets/flip_blocks_ref_02.png",
+  "format": "format_docs/VQA_DATA_FORMAT.md",
+  "classification": "format_docs/classification.md",
+  "reproduce_command": "python3 generator/flip_blocks_1_pipeline.py --count 2 --seed 20260524 --out-dir generated/flip_blocks_1_side",
+  "outputs": {
+    "records": "vis_scaling_simple_mm.jsonl",
+    "rules": "rules.jsonl",
+    "quality_report": "quality_report.json",
+    "images": "images/"
+  }
+}

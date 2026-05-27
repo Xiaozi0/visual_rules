@@ -1,0 +1,2 @@
+{"id": "r_abalone_v1-0", "media": ["images/00000.png"], "messages": [{"role:": "user", "question": "<image> This is an Abalone board. The yellow-outlined marble is Black. Can this marble move into an empty adjacent space? Answer yes or no.", "answer": "yes"}]}
+{"id": "r_abalone_v1-1", "media": ["images/00001.png"], "messages": [{"role:": "user", "question": "<image> This is an Abalone board. The yellow-outlined marble is Black. Can this marble move into an empty adjacent space? Answer yes or no.", "answer": "yes"}]}

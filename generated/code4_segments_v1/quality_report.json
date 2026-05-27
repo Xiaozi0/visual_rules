@@ -1,0 +1,14 @@
+[
+  {
+    "id": "r_code4_segments_v1-613941454-00000",
+    "keep": true,
+    "reason": "rule verifier recomputation",
+    "answer": "8356"
+  },
+  {
+    "id": "r_code4_segments_v1-309414431-00001",
+    "keep": true,
+    "reason": "rule verifier recomputation",
+    "answer": "5648"
+  }
+]

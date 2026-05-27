@@ -1,0 +1,18 @@
+{
+  "dataset": "grid_lock_v1",
+  "version": "grid_lock_v1.0.0",
+  "generator": "grid_lock_vqa_generator.py",
+  "count": 2,
+  "seed": 20260521,
+  "build_complexity": "medium",
+  "reasoning_max": "medium",
+  "rule_source": "original/批次 5-0521.md:Grid Lock",
+  "format": "format_docs/VQA_DATA_FORMAT.md",
+  "classification": "format_docs/classification.md",
+  "outputs": {
+    "records": "vis_scaling_simple_mm.jsonl",
+    "rules": "rules.jsonl",
+    "quality_report": "quality_report.json",
+    "images": "images/"
+  }
+}

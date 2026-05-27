@@ -23,8 +23,11 @@ from PIL import Image, ImageDraw
 VERSION = "dodger_vqa_v1.0.0"
 SCRIPT_NAME = "dodger_vqa_generator.py"
 CANVAS = 600
-PLAYER_SIZE = 40
-MOVE_STEP = 45
+GRID_CELLS = 10
+CELL = CANVAS // GRID_CELLS
+SPRITE_SIZE = 44
+PLAYER_SIZE = SPRITE_SIZE
+MOVE_STEP = CELL
 RULE_SOURCE = "original/批次 5-0521.md:Dodger; vendor/dodger/dodger.py"
 COLORS = {
     "red": (226, 55, 68),
@@ -109,6 +112,11 @@ def rect_distance(a: Rect, b: Rect) -> float:
     return math.hypot(ax, ay)
 
 
+def cell_rect(col: int, row: int, size: int = SPRITE_SIZE) -> Rect:
+    inset = (CELL - size) // 2
+    return Rect(col * CELL + inset, row * CELL + inset, size, size)
+
+
 def move_player(player: Rect, move: str) -> Rect:
     deltas = {
         "Left": (-MOVE_STEP, 0),
@@ -141,9 +149,19 @@ def render_state(state: DodgerState, path: Path) -> None:
     image = Image.new("RGB", (CANVAS, CANVAS), BG)
     draw = ImageDraw.Draw(image)
 
-    for pos in range(0, CANVAS + 1, 60):
+    for pos in range(0, CANVAS + 1, CELL):
         draw.line((pos, 0, pos, CANVAS), fill=GRID, width=1)
         draw.line((0, pos, CANVAS, pos), fill=GRID, width=1)
+
+    for enemy in state.enemies:
+        color = COLORS[enemy.color_name]
+        r = enemy.rect
+        future = enemy.after_steps(1)
+        draw.rectangle((future.left, future.top, future.right, future.bottom), outline=color, width=3)
+        x = int(r.center[0])
+        y0 = r.bottom + 4
+        y1 = max(y0 + 8, future.top - 6)
+        draw_arrow(draw, x, y0, y1, color)
 
     p = state.player
     draw.rounded_rectangle((p.left, p.top, p.right, p.bottom), radius=4, fill=PLAYER_COLOR, outline=WHITE, width=3)
@@ -156,35 +174,30 @@ def render_state(state: DodgerState, path: Path) -> None:
         draw.rectangle((r.left, r.top, r.right, r.bottom), fill=color, outline=WHITE, width=2)
         draw.line((r.left + 6, r.top + 6, r.right - 6, r.bottom - 6), fill=(35, 35, 38), width=3)
         draw.line((r.left + 6, r.bottom - 6, r.right - 6, r.top + 6), fill=(35, 35, 38), width=3)
-        arrow_x = min(CANVAS - 16, r.right + 13)
-        y0 = r.bottom + 3
-        y1 = min(CANVAS - 18, y0 + enemy.speed)
-        draw_arrow(draw, arrow_x, y0, y1, color)
 
     image.save(path)
 
 
 def build_first_collision_state(rng: random.Random) -> DodgerState:
-    px = rng.choice([250, 270, 290])
-    player = Rect(px, 500, PLAYER_SIZE, PLAYER_SIZE)
+    player_col = rng.choice([4, 5])
+    player = cell_rect(player_col, 8)
     enemies = [
-        Enemy("red", Rect(px + 4, 366, 34, 34), 32),
-        Enemy("orange", Rect(px - 72, 410, 30, 30), 22),
-        Enemy("purple", Rect(px + 86, 328, 38, 38), 36),
-        Enemy("cyan", Rect(px + 8, 250, 28, 28), 18),
+        Enemy("red", cell_rect(player_col, 5), CELL),
+        Enemy("orange", cell_rect(player_col - 2, 6), CELL),
+        Enemy("purple", cell_rect(player_col + 2, 4), CELL * 2),
+        Enemy("cyan", cell_rect(player_col, 2), CELL),
     ]
     return DodgerState(player, enemies)
 
 
 def build_safe_move_state(rng: random.Random) -> DodgerState:
-    px = rng.choice([250, 270, 290])
-    py = rng.choice([410, 425])
-    player = Rect(px, py, PLAYER_SIZE, PLAYER_SIZE)
+    player_col = rng.choice([4, 5])
+    player = cell_rect(player_col, 7)
     enemies = [
-        Enemy("red", Rect(px - 45, py - 38, 42, 42), 38),
-        Enemy("orange", Rect(px + 45, py - 38, 42, 42), 38),
-        Enemy("purple", Rect(px, py - 48, 40, 40), 48),
-        Enemy("cyan", Rect(px, py + 45, 38, 38), 1),
+        Enemy("red", cell_rect(player_col - 1, 6), CELL),
+        Enemy("orange", cell_rect(player_col + 1, 6), CELL),
+        Enemy("purple", cell_rect(player_col, 4), CELL * 3),
+        Enemy("cyan", cell_rect(player_col, 5), CELL * 3),
     ]
     return DodgerState(player, enemies)
 
@@ -226,9 +239,10 @@ def record(
 ) -> Dict:
     if question_kind == "first_collision":
         question = (
-            "<image> In this Dodger frame, each enemy falls straight down by the length of its "
-            "colored arrow each time step, and the blue player stays still. Which colored enemy "
-            "will collide with the player first? Answer with the color name only."
+            "<image> In this grid version of Dodger, each enemy falls straight down to the "
+            "outlined square shown by its colored arrow each time step, and the blue player "
+            "stays still. Which colored enemy will collide with the player first? Answer with "
+            "the color name only."
         )
         choices = [enemy.color_name for enemy in state.enemies]
         answer_type = "string"
@@ -236,10 +250,11 @@ def record(
         complexity = 0.55
     elif question_kind == "safe_move":
         question = (
-            "<image> In this Dodger frame, each enemy falls straight down by the length of its "
-            "colored arrow in the next time step. The blue player may move exactly one step "
-            "Left, Right, Up, or Down. Which move gives the largest collision-free gap after "
-            "that next time step? Answer with one direction only."
+            "<image> In this grid version of Dodger, each enemy falls straight down to the "
+            "outlined square shown by its colored arrow in the next time step. The blue player "
+            "may move exactly one grid square Left, Right, Up, or Down before the enemies fall. "
+            "Which move gives the largest collision-free gap after that next time step? Answer "
+            "with one direction only."
         )
         choices = ["Left", "Right", "Up", "Down"]
         answer_type = "multiple_choice"
@@ -303,6 +318,7 @@ def record(
                 "question_kind": question_kind,
                 "raw_state": {
                     "canvas": [CANVAS, CANVAS],
+                    "grid_cells": [GRID_CELLS, GRID_CELLS],
                     "player_move_step": MOVE_STEP,
                     "player": asdict(state.player),
                     "enemies": [
@@ -331,12 +347,12 @@ def write_rules(path: Path) -> None:
         {
             "id": "dodger_vqa_v1.playfield",
             "task": "dodger_collision_avoidance",
-            "rule": "The game is represented on a 600 x 600 square playfield.",
+            "rule": f"The game is represented on a {GRID_CELLS} x {GRID_CELLS} grid inside a 600 x 600 square playfield.",
         },
         {
             "id": "dodger_vqa_v1.motion",
             "task": "dodger_collision_avoidance",
-            "rule": "Enemies fall straight downward; the colored arrow beside each enemy shows its one-step displacement.",
+            "rule": "Enemies fall straight downward; the colored arrow points from each enemy's current square to its next square.",
         },
         {
             "id": "dodger_vqa_v1.collision",
@@ -346,7 +362,7 @@ def write_rules(path: Path) -> None:
         {
             "id": "dodger_vqa_v1.player_move",
             "task": "dodger_collision_avoidance",
-            "rule": f"For safe-move questions, the player moves exactly {MOVE_STEP} pixels in the chosen cardinal direction before collision is evaluated.",
+            "rule": "For safe-move questions, the player moves exactly one grid square in the chosen cardinal direction before collision is evaluated.",
         },
     ]
     write_jsonl(rules, path)

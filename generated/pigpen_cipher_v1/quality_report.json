@@ -1,0 +1,14 @@
+[
+  {
+    "id": "r_pigpen_cipher_v1-721076715-00000",
+    "keep": true,
+    "reason": "rule verifier recomputation",
+    "answer": "WAVE"
+  },
+  {
+    "id": "r_pigpen_cipher_v1-877234856-00001",
+    "keep": true,
+    "reason": "rule verifier recomputation",
+    "answer": "MARK"
+  }
+]

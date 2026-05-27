@@ -1,3 +1,0 @@
-{"id": "spongebob_cube_vqa_1.faces", "task": "spongebob_cube_vqa_1", "rule": "The cube has six fixed faces: Face, Pants, Shirt, Back, Left side, and Right side."}
-{"id": "spongebob_cube_vqa_1.rolls", "task": "spongebob_cube_vqa_1", "rule": "Each north/south/west/east move rolls the cube by one grid cell and updates all six face directions.", "move_alphabet": ["N", "S", "W", "E"]}
-{"id": "spongebob_cube_vqa_1.goal", "task": "spongebob_cube_vqa_1", "rule": "A goal condition can require both the final grid cell and the final top face to match."}

@@ -1,4 +1,4 @@
-{"id": "dodger_vqa_v1.playfield", "task": "dodger_collision_avoidance", "rule": "The game is represented on a 600 x 600 square playfield."}
-{"id": "dodger_vqa_v1.motion", "task": "dodger_collision_avoidance", "rule": "Enemies fall straight downward; the colored arrow beside each enemy shows its one-step displacement."}
+{"id": "dodger_vqa_v1.playfield", "task": "dodger_collision_avoidance", "rule": "The game is represented on a 10 x 10 grid inside a 600 x 600 square playfield."}
+{"id": "dodger_vqa_v1.motion", "task": "dodger_collision_avoidance", "rule": "Enemies fall straight downward; the colored arrow points from each enemy's current square to its next square."}
 {"id": "dodger_vqa_v1.collision", "task": "dodger_collision_avoidance", "rule": "The player is hit when its axis-aligned rectangle intersects any enemy rectangle after motion."}
-{"id": "dodger_vqa_v1.player_move", "task": "dodger_collision_avoidance", "rule": "For safe-move questions, the player moves exactly 45 pixels in the chosen cardinal direction before collision is evaluated."}
+{"id": "dodger_vqa_v1.player_move", "task": "dodger_collision_avoidance", "rule": "For safe-move questions, the player moves exactly one grid square in the chosen cardinal direction before collision is evaluated."}

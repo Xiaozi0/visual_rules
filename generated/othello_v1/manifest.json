@@ -1,0 +1,19 @@
+{
+  "dataset": "othello_v1",
+  "version": "othello_v1.0.0",
+  "generator": "othello_vqa_generator.py",
+  "count": 2,
+  "seed": 20260521,
+  "build_complexity": "low",
+  "reasoning_max": "high",
+  "rule_source": "original/批次 5-0521.md:Othello",
+  "format": "format_docs/VQA_DATA_FORMAT.md",
+  "classification": "format_docs/classification.md",
+  "reproduce_command": "python3 generator/othello_vqa_generator.py --count 2 --seed 20260521 --out-dir generated/othello_v1",
+  "outputs": {
+    "records": "vis_scaling_simple_mm.jsonl",
+    "rules": "rules.jsonl",
+    "quality_report": "quality_report.json",
+    "images": "images/"
+  }
+}

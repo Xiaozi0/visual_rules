@@ -1,0 +1,1 @@
+{"id": "flip_blocks_reachability.rule", "task": "flip_blocks_reachability", "rule": "The block must roll only across usable tiles and finish standing exactly on the goal hole."}

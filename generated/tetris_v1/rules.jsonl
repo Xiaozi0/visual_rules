@@ -1,0 +1,1 @@
+{"id": "tetris_v1.line_clear", "rule": "A horizontal row is cleared when all cells in that row are filled with blocks."}

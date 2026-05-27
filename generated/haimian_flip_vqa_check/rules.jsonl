@@ -1,0 +1,1 @@
+{"id": "haimian_flip.rule", "task": "spongebob_cube_orientation", "rule": "The cube starts with a fixed face assignment and changes top/front/left faces deterministically when rolled along the shown arrow path."}

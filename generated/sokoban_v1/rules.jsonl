@@ -1,0 +1,1 @@
+{"id": "sokoban_v1.push", "rule": "A player can push a box if the player is directly behind it and the square in front of the box is empty or a target."}

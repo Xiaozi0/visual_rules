@@ -1,0 +1,2 @@
+{"id": "othello_v1.legal_move", "rule": "A legal move must bracket at least one opponent disc between the newly placed disc and an existing disc of the player's color, in a straight line."}
+{"id": "othello_v1.flip", "rule": "All bracketed opponent discs in a straight line are flipped to the player's color."}

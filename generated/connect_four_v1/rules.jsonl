@@ -1,0 +1,2 @@
+{"id": "connect_four_v1.gravity", "rule": "Discs dropped into a column fall to the lowest available empty space."}
+{"id": "connect_four_v1.win", "rule": "A player wins by aligning four of their discs horizontally, vertically, or diagonally."}

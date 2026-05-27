@@ -1,0 +1,1 @@
+{"id": "flood_it_v1.flood", "rule": "Choosing a color changes the entire top-left connected region to that color and absorbs any adjacent blocks of the newly chosen color."}

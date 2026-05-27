@@ -1,0 +1,19 @@
+{
+  "dataset": "password_lock_v1",
+  "version": "password_lock_v1.0.0",
+  "generator": "password_lock_vqa_generator.py",
+  "count": 2,
+  "seed": 20260522,
+  "build_complexity": "low",
+  "reasoning_max": "high",
+  "rule_source": "original/批次6-0522.md:解开密码锁",
+  "format": "format_docs/VQA_DATA_FORMAT.md",
+  "classification": "format_docs/classification.md",
+  "reproduce_command": "python3 generator/password_lock_vqa_generator.py --count 2 --seed 20260522 --out-dir generated/password_lock_v1",
+  "outputs": {
+    "records": "vis_scaling_simple_mm.jsonl",
+    "rules": "rules.jsonl",
+    "quality_report": "quality_report.json",
+    "images": "images/"
+  }
+}

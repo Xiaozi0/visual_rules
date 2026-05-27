@@ -1,0 +1,14 @@
+[
+  {
+    "id": "r_arrow_time_v1-233441635-00000",
+    "keep": true,
+    "reason": "rule verifier recomputation",
+    "answer": "23:42"
+  },
+  {
+    "id": "r_arrow_time_v1-802168573-00001",
+    "keep": true,
+    "reason": "rule verifier recomputation",
+    "answer": "01:00"
+  }
+]

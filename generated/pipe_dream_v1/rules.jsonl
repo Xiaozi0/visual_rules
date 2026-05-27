@@ -1,0 +1,1 @@
+{"id": "pipe_dream_v1.connectivity", "rule": "Two pipes are connected if their adjacent ports face each other. Water flows from the Start through all connected pipes."}

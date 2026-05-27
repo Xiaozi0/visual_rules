@@ -1,0 +1,14 @@
+[
+  {
+    "id": "r_sliding_puzzle_v1-78749814-00000",
+    "keep": true,
+    "reason": "legal-move verifier",
+    "answer": "9, 10, 14"
+  },
+  {
+    "id": "r_sliding_puzzle_v1-445893207-00001",
+    "keep": true,
+    "reason": "legal-move verifier",
+    "answer": "yes"
+  }
+]

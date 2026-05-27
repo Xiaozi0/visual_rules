@@ -1,0 +1,14 @@
+[
+  {
+    "id": "r_midpoint_area_v1-58128375-00000",
+    "keep": true,
+    "reason": "rule verifier recomputation",
+    "answer": "5"
+  },
+  {
+    "id": "r_midpoint_area_v1-13521807-00001",
+    "keep": true,
+    "reason": "rule verifier recomputation",
+    "answer": "7"
+  }
+]
